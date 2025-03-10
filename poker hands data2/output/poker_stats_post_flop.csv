@@ -1,0 +1,20 @@
+Player,Stat,Count,Percentage,Total
+Hero,Flop Hands,1821,36.42%,5000
+Hero,SRP Hands,1339,73.53%,1821
+Hero,SRP Cbet,58,15.59%,372
+Hero,SRP Fold to Cbet,0,0.00%,0
+Hero,SRP Call Cbet,0,0.00%,0
+Hero,SRP Raise Cbet,0,0.00%,0
+Hero,SRP Donk,0,0.00%,0
+Hero,3B Pot Hands,76,4.17%,1821
+Hero,3B Pot Cbet,7,9.21%,76
+Hero,3B Pot Fold to Cbet,0,0.00%,0
+Hero,3B Pot Call Cbet,0,0.00%,0
+Hero,3B Pot Raise Cbet,0,0.00%,0
+Hero,3B Pot Donk,0,0.00%,0
+Hero,4B Pot Hands,0,0.00%,1821
+Hero,4B Pot Cbet,0,0.00%,0
+Hero,4B Pot Fold to Cbet,0,0.00%,0
+Hero,4B Pot Call Cbet,0,0.00%,0
+Hero,4B Pot Raise Cbet,0,0.00%,0
+Hero,4B Pot Donk,0,0.00%,0

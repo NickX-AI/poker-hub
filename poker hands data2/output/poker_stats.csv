@@ -1,0 +1,38 @@
+Player,Stat,Count,Percentage,Total
+Hero,Total Hands,5000,100%,5000
+Hero,PFR,491,9.82%,5000
+Hero,VPIP,958,19.16%,5000
+Hero,ATS,258,5.16%,5000
+Hero,SB Opens,26,3.12%,832
+Hero,BB Opens,4,0.48%,832
+Hero,UTG Opens,116,13.79%,841
+Hero,MP Opens,113,13.63%,829
+Hero,CO Opens,127,15.23%,834
+Hero,BTN Opens,105,12.62%,832
+Hero,BB Fold,490,58.89%,832
+Hero,SB Fold,675,81.13%,832
+Hero,BB Call SB Raise,0,0.00%,92
+Hero,BB Call UTG Raise,0,0.00%,151
+Hero,BB Call MP Raise,0,0.00%,148
+Hero,BB Call CO Raise,0,0.00%,110
+Hero,BB Call BTN Raise,0,0.00%,164
+Hero,3B(all),83,2.43%,3416
+Hero,3B(oop),37,1.84%,2014
+Hero,3B(ip),46,3.28%,1402
+Hero,Got 3B(all),0,0.00%,491
+Hero,Got 3B(oop),0,0.00%,491
+Hero,Got 3B(ip),0,0.00%,491
+Hero,Fold to 3B(all),0,0.00%,0
+Hero,Fold to 3B(oop),0,0.00%,0
+Hero,Fold to 3B(ip),0,0.00%,0
+Hero,Call 3B(all),0,0.00%,0
+Hero,Call 3B(oop),0,0.00%,0
+Hero,Call 3B(ip),0,0.00%,0
+Hero,4B,0,0.00%,0
+Hero,Got 4B,0,0.00%,83
+Hero,Fold to 4B,0,0.00%,0
+Hero,Call 4B,0,0.00%,0
+Hero,5B,0,0.00%,0
+Hero,Got 5B,0,0.00%,0
+Hero,Fold to 5B,0,0.00%,0
+Hero,Call 5B,0,0.00%,0
