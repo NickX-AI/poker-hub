@@ -3,7 +3,7 @@ import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 import csv
-from poker_hand_parser_ok import PokerHandParser
+from poker_hand_parser import PokerHandParser
 
 class PokerHandProcessorGUI:
     def __init__(self, root):
@@ -172,28 +172,38 @@ class PokerHandProcessorGUI:
                             elif current_hand:
                                 hand_text = ''.join(current_hand)
                                 self.log("处理新的手牌...")
-                                hand_data = parser.parse_hand(hand_text)
-                                # 添加 BB 单位到所有底池值
-                                for key in ['preflop_pot', 'flop_pot', 'turn_pot', 'river_pot', 'total_pot']:
-                                    if hand_data[key] > 0:
-                                        hand_data[key] = f"{hand_data[key]}BB"
-                                    else:
-                                        hand_data[key] = "0BB"
-                                all_hands.append(hand_data)
+                                try:
+                                    hand_data = parser.parse_hand(hand_text)
+                                    # 添加 BB 单位到所有底池值
+                                    for key in ['preflop_pot', 'flop_pot', 'turn_pot', 'river_pot', 'total_pot']:
+                                        if isinstance(hand_data[key], (int, float)) and hand_data[key] > 0:
+                                            hand_data[key] = f"{hand_data[key]}BB"
+                                        elif isinstance(hand_data[key], (int, float)):
+                                            hand_data[key] = "0BB"
+                                    all_hands.append(hand_data)
+                                except ZeroDivisionError:
+                                    self.log(f"错误: BB值为零，无法处理该手牌")
+                                except Exception as e:
+                                    self.log(f"处理手牌时出错: {str(e)}")
                                 current_hand = []
                     
                     # 处理最后一手牌（如果存在）
                     if current_hand:
                         hand_text = ''.join(current_hand)
                         self.log("处理最后一手牌...")
-                        hand_data = parser.parse_hand(hand_text)
-                        # 添加 BB 单位到所有底池值
-                        for key in ['preflop_pot', 'flop_pot', 'turn_pot', 'river_pot', 'total_pot']:
-                            if hand_data[key] > 0:
-                                hand_data[key] = f"{hand_data[key]}BB"
-                            else:
-                                hand_data[key] = "0BB"
-                        all_hands.append(hand_data)
+                        try:
+                            hand_data = parser.parse_hand(hand_text)
+                            # 添加 BB 单位到所有底池值
+                            for key in ['preflop_pot', 'flop_pot', 'turn_pot', 'river_pot', 'total_pot']:
+                                if isinstance(hand_data[key], (int, float)) and hand_data[key] > 0:
+                                    hand_data[key] = f"{hand_data[key]}BB"
+                                elif isinstance(hand_data[key], (int, float)):
+                                    hand_data[key] = "0BB"
+                            all_hands.append(hand_data)
+                        except ZeroDivisionError:
+                            self.log(f"错误: BB值为零，无法处理该手牌")
+                        except Exception as e:
+                            self.log(f"处理最后一手牌时出错: {str(e)}")
                 except Exception as e:
                     self.log(f"处理文件 {input_file} 时出错: {str(e)}")
                 
@@ -219,7 +229,12 @@ class PokerHandProcessorGUI:
                     'preflop_pot': 'Preflop_Pot',
                     'flop_pot': 'Flop_Pot',
                     'turn_pot': 'Turn_Pot',
-                    'river_pot': 'River_Pot'
+                    'river_pot': 'River_Pot',
+                    'preflop_line1': 'Preflop_Line1',
+                    'preflop_line2': 'Preflop_Line2',
+                    'preflop_line3': 'Preflop_Line3',
+                    'SB_BB': 'SB/BB',
+                    'cash_drop': 'Cash_Drop'
                 }
                 
                 with open(output_file, 'w', newline='', encoding='utf-8') as f:

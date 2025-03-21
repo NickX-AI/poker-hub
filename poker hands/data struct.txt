@@ -1,0 +1,48 @@
+self.hand_data = {
+            'hand_id': '',
+            'SB_BB': '',  # 记录大小盲注金额
+            'cash_drop': 'NO',  # 记录红包降落，默认为NO
+            'hero_position': '',
+            'hero_stack': '',  # 改为字符串类型，因为会包含 BB 单位
+            'hero_cards': '', 
+            'flop_cards': '',
+            'turn_card': '',
+            'river_card': '',            
+            'preflop_actions': '',  # 只从UTG开始记录，不记录大小盲注
+            'preflop_action_1st_bet': '',  # 只记录raises和calls，到第二个raises前
+            'preflop_action_3B': '',  # 只记录raises和calls，到第三个raises前
+            'preflop_action_4B': '',  # 只记录raises和calls，到第四个raises前
+            'preflop_action_5B': '',  # 只记录raises和calls
+            'preflop_action_limp': '',  # Hero跟注
+            'preflop_action_limp_fold': '',  # Hero跟注后弃牌
+            'preflop_action_limp_call': '',  # Hero跟注后被加注，然后跟注
+            'preflop_pot': 0.0,
+            'hero_position_type': '',  # 新增：IP/OOP/NA (實際有打到翻後才有紀錄)
+            'hero_open_position': '',  # 新增：记录Hero open位置  -->也要一起紀錄如果前位沒有人raises，但hero folds，記錄folds。如果前位有人先raises則紀錄NA
+            'hero_3b_chance': 'NO',    # 修改：从hero_3b_position改为hero_3b_chance，记录Hero 3B机会状态 (NO/Yes-3B/Yes-Calls/Yes-folds)
+            'pot_type': '',           # 新增：底池类型(SRP/3B/4B/5B)
+            'hero_squeeze': 'NO',     # 新增：Hero是否squeeze
+            'final_pot_type': '',     # 新增：最终底池类型(1v1/multi)
+            'preflop_summary': '',     #紀錄preflop最後結果， BB/SB call open/fold to 3B/call 3B/fold to 4B/ call 4B/ limp-fold/limp-calls
+            'flop_actions': '',
+            'flop_pot': 0.0,
+            'turn_actions': '',
+            'turn_pot': 0.0,
+            'river_actions': '',
+            'river_pot': 0.0,
+            'result': '',
+            'total_pot': 0.0,
+            # 新增flop动作细节字段
+            'ip_cbet_flop': '',      # IP玩家是否在flop做cbet
+            'oop_cbet_flop': '',     # OOP玩家是否在flop做cbet
+            'ip_cbet_response': '',  # OOP对IP的cbet反应：fold/call/raise
+            'oop_cbet_response': '', # IP对OOP的cbet反应：fold/call/raise
+            'oop_donk_flop': 'NO',   # OOP玩家是否donk
+            'ip_donk_reaction': '',  # IP玩家对OOP donk的反应
+            'miss_cbet_oop': '',     # OOP玩家未cbet的情况
+            'miss_cbet_oop_response': '', # IP对OOP未cbet的反应：bet/check
+            'miss_cbet_ip': '',      # IP玩家未cbet的情况
+            'miss_cbet_ip_response': '',  # OOP对IP未cbet的反应：bet/check
+            'hero_win': 'NO',
+            'hero_win_amount': 0
+        }
